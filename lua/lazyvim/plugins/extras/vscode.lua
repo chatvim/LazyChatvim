@@ -68,15 +68,15 @@ return {
       statuscolumn = { enabled = false },
     },
   },
-  {
-    "chatvim/LazyVim",
-    config = function(_, opts)
-      opts = opts or {}
-      -- disable the colorscheme
-      opts.colorscheme = function() end
-      require("lazyvim").setup(opts)
-    end,
-  },
+  -- {
+  --   "chatvim/LazyVim",
+  --   config = function(_, opts)
+  --     opts = opts or {}
+  --     -- disable the colorscheme
+  --     opts.colorscheme = function() end
+  --     require("lazyvim").setup(opts)
+  --   end,
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = { highlight = { enable = false } },
