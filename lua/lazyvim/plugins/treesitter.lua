@@ -76,10 +76,42 @@ return {
       textobjects = {
         move = {
           enable = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+          goto_next_start = {
+            ["]f"] = "@function.outer",
+            ["]c"] = "@class.outer",
+            ["]a"] = "@parameter.inner",
+            ["]x"] = {
+              query = "@codeblock.outer",
+              desc = "Next code block start",
+            },
+          },
+          goto_next_end = {
+            ["]F"] = "@function.outer",
+            ["]C"] = "@class.outer",
+            ["]A"] = "@parameter.inner",
+            ["]X"] = {
+              query = "@codeblock.outer",
+              desc = "Next code block end",
+            },
+          },
+          goto_previous_start = {
+            ["[f"] = "@function.outer",
+            ["[c"] = "@class.outer",
+            ["[a"] = "@parameter.inner",
+            ["[x"] = {
+              query = "@codeblock.outer",
+              desc = "Previous code block start",
+            },
+          },
+          goto_previous_end = {
+            ["[F"] = "@function.outer",
+            ["[C"] = "@class.outer",
+            ["[A"] = "@parameter.inner",
+            ["[X"] = {
+              query = "@codeblock.outer",
+              desc = "Previous code block end",
+            },
+          },
         },
       },
     },
@@ -89,6 +121,16 @@ return {
         opts.ensure_installed = LazyVim.dedup(opts.ensure_installed)
       end
       require("nvim-treesitter.configs").setup(opts)
+      -- Define the custom Tree-sitter queries for markdown code blocks
+      vim.treesitter.query.set(
+        "markdown",
+        "textobjects",
+        [[
+      (fenced_code_block
+        (code_fence_content) @codeblock.inner
+      ) @codeblock.outer
+    ]]
+      )
     end,
   },
 
