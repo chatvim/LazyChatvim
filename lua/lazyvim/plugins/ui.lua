@@ -312,7 +312,7 @@ return {
           ---@type snacks.dashboard.Item[]
           keys = {
             { icon = " ", key = "c", desc = "New Chat", action = ":ChatvimNew" },
-            { icon = " ", key = "h", desc = "Help", action = ":ChatvimHelp" },
+            { icon = " ", key = "h", desc = "Help Chat", action = ":ChatvimHelp" },
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
