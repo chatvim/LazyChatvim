@@ -311,7 +311,8 @@ return {
           -- stylua: ignore
           ---@type snacks.dashboard.Item[]
           keys = {
-            { icon = " ", key = "c", desc = "Chat with AI", action = ":ChatvimNew" },
+            { icon = " ", key = "c", desc = "New Chat with AI", action = ":ChatvimNew" },
+            { icon = " ", key = "c", desc = "Help Chat with AI", action = ":ChatvimHelp" },
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
