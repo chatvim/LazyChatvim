@@ -175,6 +175,8 @@ return {
       ) @codeblock.outer
     ]]
       )
+      -- Alias zsh to bash for Markdown code blocks
+      vim.treesitter.language.register("bash", "zsh")
     end,
   },
 
