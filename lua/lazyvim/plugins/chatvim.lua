@@ -1,7 +1,7 @@
 return {
   -- Chatvim: public install
   {
-    "chatvim/chatvim.nvim",
+    "earthbucks/chatvim.nvim",
     build = "npm install",
     config = function()
       require("chatvim")
