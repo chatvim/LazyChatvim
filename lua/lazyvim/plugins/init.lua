@@ -13,7 +13,16 @@ require("lazyvim.config").init()
 return {
   { "folke/lazy.nvim", version = "*" },
   -- { "chatvim/LazyChatvim", priority = 10000, lazy = false, opts = {}, cond = true, version = "*" },
-  { "earthbucks/LazyVim", priority = 10000, lazy = false, opts = {}, cond = true, version = "*" },
+  -- { "earthbucks/LazyVim", priority = 10000, lazy = false, opts = {}, cond = true, version = "*" },
+  {
+    dir = "~/dev/LazyVim",
+    name = "LazyVim",
+    priority = 10000,
+    lazy = false,
+    opts = {},
+    cond = true,
+    version = "*",
+  },
   {
     "folke/snacks.nvim",
     priority = 1000,
